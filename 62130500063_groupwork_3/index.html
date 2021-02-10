@@ -16,12 +16,12 @@
   <title>Basic Vue Js - HelloWorld App</title>
 </head>
 <body id="app">
-    <p>Favorite: ({{favCount}})</p>
-    <div v-for="rose in roses" class="flex flex-row">
-        <img :src="rose.image" :alt="rose.name" class="ml-96 mb-10 h-96 w-96"/>
-        <img :src="fav" v-show="isFav" class="w-24 h-24 ml-20 mt-36 absolute" @click="updateFav">
-        <img :src="unfav" v-show="isUnFav" class="w-24 h-24 ml-20 mt-36 absolute" @click="updateFav">
-
+    <p class="text-xl font-bold">Photo({{ calculate }}) </p>
+    <p class="text-xl font-bold">Favorite: ({{favCount}})</p>
+    <div v-for="(rose,index) in roses" class="flex items-center">
+        <img :src="rose.image" :alt="rose.name" class="ml-48 mb-10 h-48 w-48"/>
+        <img :src="fav" v-if="rose.isFav" class="w-12 h-12 ml-20"  @click="updateFav(index)">
+        <img :src="unfav" v-else class="w-12 h-12 ml-20" @click="updateFav(index)">
     </div>
     
     

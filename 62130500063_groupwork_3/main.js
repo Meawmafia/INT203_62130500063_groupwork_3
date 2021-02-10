@@ -3,35 +3,31 @@ const app = Vue.createApp({
         return {
             msg: 'Hello World!',
             roses: [
-                { name:"red" , image:'./img/red.jpg' },
-                {  name:"yellow" , image:'./img/yellow.jpg' },
-                {  name:"white" , image:'./img/white.jpg' }
+                { name:"red" , image:'./img/red.jpg', isFav: false },
+                {  name:"yellow" , image:'./img/yellow.jpg', isFav: false },
+                {  name:"white" , image:'./img/white.jpg', isFav: false }
               ],
             
             fav: './img/fav.png',
             unfav: './img/unfav.png',
             favCount: 0,
-            isFav: false,
-            isUnFav: true
         }
     },
     methods: {
-        updateFav() {
-                if(this.isFav == false){
-                    this.isFav = true
-                    this.isUnFav = false
-                        this.favCount += 1
-                }else{
-                    this.isFav = false
-                    this.isUnFav = true
-                    this.favCount -= 1
+        updateFav(index) {
 
-                }
+                    this.roses[index].isFav = !this.roses[index].isFav
+                    if(this.roses[index].isFav){
+                        this.favCount += 1
+                    }else{
+                        this.favCount -= 1
+                    }
+                
         }
     },
-    compute: {
-        count(){
-            this.favCount = this.roses.lenght
+    computed: {
+        calculate(){
+       return this.roses.length
         }
     }
 })

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Basic Vue Js - HelloWorld App</title>
+    <!-- https://google.github.io/material-design-icons/#icon-font-for-the-web -->
+    <!-- Using via Google Web Fonts -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <!-- https://tailwindcss.com/docs/installation -->
+    <!-- Using Tailwind via CDN -->
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
+    <!-- https://v3.vuejs.org/guide/installation.html#release-notes -->
+    <!-- Vue CDN -->
+    <script src="https://unpkg.com/vue@3.0.0-beta.12/dist/vue.global.js"></script>
+  <title>Basic Vue Js - HelloWorld App</title>
+</head>
+<body id="app">
+    <p>Favorite: ({{favCount}})</p>
+    <div v-for="rose in roses" class="flex flex-row">
+        <img :src="rose.image" :alt="rose.name" class="ml-96 mb-10 h-96 w-96"/>
+        <img :src="fav" v-show="isFav" class="w-24 h-24 ml-20 mt-36 absolute" @click="updateFav">
+        <img :src="unfav" v-show="isUnFav" class="w-24 h-24 ml-20 mt-36 absolute" @click="updateFav">
+
+    </div>
+    
+    
+    
+    
+      <!-- my main.js -->
+
+      <script src="./main.js"></script> 
+</body>
+</html>
